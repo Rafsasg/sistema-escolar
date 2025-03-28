@@ -1,0 +1,9 @@
+{
+  "students": [
+    { "id": "123", "name": "Juan Pérez", "grade": "1º", "notes": "Aprobado", "reports": "Sin observaciones" },
+    { "id": "456", "name": "María López", "grade": "2º", "notes": "Excelente", "reports": "Muy buen desempeño" }
+  ],
+  "enrollments": [
+    { "id": "789", "fileName": "matricula1.pdf" }
+  ]
+}

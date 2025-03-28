@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema web para escuelas que permite gestionar estudiantes, notas, informes y matrículas de forma sencilla y con enfoque mobile-first.">
+  <meta name="keywords" content="sistema escolar, gestión de estudiantes, mobile first, Excel, directivos">
+  <meta name="robots" content="index, follow">
+  <title>Sistema Escolar - Gestión Integral</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Comic+Neue:400,700&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Librería SheetJS para leer archivos Excel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <!-- Espacio en la esquina superior izquierda (logo o acceso rápido) -->
+  <div id="topLeftSpace">
+    <a href="index.html" title="Inicio"><img src="images/logo.png" alt="Logo" /></a>
+  </div>
+
+  <!-- Cabecera principal -->
+  <header>
+    <h1>Sistema Escolar</h1>
+    <p>Gestión de estudiantes, notas, informes y matrículas</p>
+  </header>
+
+  <!-- Navegación principal -->
+  <nav>
+    <ul>
+      <li><button id="btnDirectivas">Directivas</button></li>
+      <li><button id="btnConsulta">Consulta y Peticiones</button></li>
+      <li><button id="btnAcerca">Acerca de</button></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main>
+    <!-- Sección Directivas -->
+    <section id="sectionDirectivas" class="hidden">
+      <article id="loginAdmin">
+        <h2>Inicio de Sesión Directivos</h2>
+        <form id="formLogin">
+          <label for="adminUser">Usuario:</label>
+          <input type="text" id="adminUser" placeholder="Ingrese su usuario" required>
+          <label for="adminPass">Contraseña:</label>
+          <input type="password" id="adminPass" placeholder="Ingrese su contraseña" required>
+          <button type="submit">Ingresar</button>
+        </form>
+      </article>
+
+      <article id="panelAdmin" class="hidden">
+        <h2>Panel Directivos</h2>
+        <!-- Agregar estudiante manualmente -->
+        <section id="addStudent">
+          <h3>Agregar Nuevo Estudiante</h3>
+          <form id="formAddStudent">
+            <label for="studentID">ID:</label>
+            <input type="text" id="studentID" placeholder="Ej. 123" required>
+            <label for="studentName">Nombre:</label>
+            <input type="text" id="studentName" placeholder="Nombre completo" required>
+            <label for="studentGrade">Grado:</label>
+            <input type="text" id="studentGrade" placeholder="Ej. 1º" required>
+            <button type="submit">Agregar Estudiante</button>
+          </form>
+        </section>
+
+        <!-- Subir archivo Excel -->
+        <section id="uploadExcel">
+          <h3>Subir Archivo Excel</h3>
+          <form id="formUploadExcel">
+            <label for="excelFile">Seleccione archivo (.xlsx, .xls):</label>
+            <input type="file" id="excelFile" accept=".xlsx, .xls" required>
+            <button type="submit">Subir Archivo</button>
+          </form>
+        </section>
+
+        <!-- Listado de estudiantes por grado -->
+        <section id="studentLists">
+          <h3>Lista de Estudiantes</h3>
+          <div id="listsContainer"></div>
+        </section>
+
+        <!-- Matrículas pendientes -->
+        <section id="pendingEnrollments">
+          <h3>Matrículas Pendientes</h3>
+          <ul id="enrollmentList"></ul>
+        </section>
+
+        <button id="btnLogout">Cerrar Sesión</button>
+      </article>
+    </section>
+
+    <!-- Sección Consulta y Peticiones -->
+    <section id="sectionConsulta" class="hidden">
+      <article>
+        <h2>Consulta y Peticiones</h2>
+        <!-- Buscar estudiante -->
+        <form id="formSearchStudent">
+          <label for="searchID">Ingrese TI o CC:</label>
+          <input type="text" id="searchID" placeholder="Número de identificación" required>
+          <button type="submit">Buscar Estudiante</button>
+        </form>
+        <div id="studentInfo"></div>
+      </article>
+
+      <!-- Enviar formulario de matrícula -->
+      <article id="enrollmentSection">
+        <h3>Enviar Formulario de Matrícula</h3>
+        <form id="formEnrollment">
+          <label for="enrollID">Identificación:</label>
+          <input type="text" id="enrollID" placeholder="Su identificación" required>
+          <label for="enrollFile">Seleccione archivo (PDF o PNG):</label>
+          <input type="file" id="enrollFile" accept=".pdf, .png" required>
+          <button type="submit">Enviar Matrícula</button>
+        </form>
+        <div id="formMessage"></div>
+      </article>
+    </section>
+
+    <!-- Sección Acerca de -->
+    <section id="sectionAcerca" class="hidden">
+      <article>
+        <h2>Acerca del Sistema</h2>
+        <p>
+          Este sistema escolar está diseñado para facilitar la gestión de estudiantes, notas, informes y matrículas.
+          Con un enfoque mobile-first, se busca brindar una experiencia sencilla, rápida y agradable.
+        </p>
+        <p>
+          Desarrollado con tecnologías modernas como HTML5, CSS3 y JavaScript, e integrado con Firebase para el manejo en tiempo real de datos.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2025 Sistema Escolar. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Carga del script principal como módulo -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
