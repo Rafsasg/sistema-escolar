@@ -7,13 +7,26 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
-  background-image: url(images/3d-rendering-hexagonal-texture-background.jpg);
-  background-size: cover;
-  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* O ajusta según sea necesario */
+  margin: 0;
+  background-color: #f5f5f5; /* Color de fondo opcional */
+}
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px; /* Ajusta el tamaño según sea necesario */
+}
+.container {
+  text-align: center;
+  width: 90%; /* Ajusta según el tamaño de la pantalla */
+  max-width: 1200px; /* Evita que en pantallas grandes se vea demasiado extendido */
+}
+img {
+  max-width: 100%; /* Para que el logo se adapte bien */
+  height: auto;
 }
 
 /* Contenedor en la esquina superior izquierda */
