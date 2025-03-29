@@ -19,16 +19,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
-  <!-- Espacio en la esquina superior izquierda (logo o acceso rápido) -->
-  <div id="topLeftSpace">
-    <a href="index.html" title="Inicio"><img src="images/EscudoErnesto.png" alt="Logo" class="logo">
-    </a>
-  </div>
-
-  <!-- Cabecera principal -->
+  <!-- Cabecera principal con logo integrado -->
   <header>
-    <h1>Sistema Escolar</h1>
-    <p>Gestión de estudiantes, notas, informes y matrículas</p>
+    <div class="header-container">
+      <a href="index.html" title="Inicio">
+        <img src="images/EscudoErnesto.png" alt="Logo" class="logo">
+      </a>
+      <div class="header-text">
+        <h1>Ernesto Parodi Medina</h1>
+        <p>Gestión de estudiantes, notas, informes y matrículas</p>
+      </div>
+    </div>
   </header>
 
   <!-- Navegación principal -->
@@ -141,7 +142,7 @@
 
   <!-- Pie de página -->
   <footer>
-    <p>&copy; 2025 Sistema Escolar. Todos los derechos reservados.</p>
+    <p>© 2025 Sistema Escolar. Todos los derechos reservados.</p>
   </footer>
 
   <!-- Carga del script principal como módulo -->

@@ -1,143 +1,206 @@
-/* Reset básico */
+/* Reset básico y tipografía */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilos generales del body */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f4f7f6;
   color: #333;
+  line-height: 1.6;
 }
 
-/* Contenedor general para limitar el ancho de la página */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Contenedor general */
+main {
   padding: 20px;
-}
-
-/* Espacio en la esquina superior izquierda para el logo */
-#topLeftSpace {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-#topLeftSpace .logo {
-  width: 80px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* Cabecera */
 header {
-  text-align: center;
-  padding: 60px 20px 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #2e7d32; /* Verde oscuro escolar */
+  color: white;
+  padding: 10px;
 }
 
-/* Navegación principal */
-nav {
-  background-color: #007BFF;
-  color: #fff;
-}
-nav ul {
+.header-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start; /* Logo a la izquierda */
+  padding: 10px;
+  flex-wrap: wrap; /* Permite apilar en pantallas pequeñas */
+}
+
+.logo {
+  width: 10px;
+  height: auto;
+  background-color: white; /* Fondo blanco */
+  border-radius: 50%; /* Fondo redondeado */
+  padding: 5px; /* Espacio entre el logo y el borde del fondo */
+  margin-right: 15px; /* Espacio entre logo y texto */
+}
+
+.header-text {
+  flex-grow: 1; /* Ocupa el espacio restante */
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.header-text h1 {
+  font-size: 1.8em;
+}
+
+.header-text p {
+  font-size: 1em;
+  font-family: 'Comic Neue', cursive;
+}
+
+/* Navegación */
+nav {
+  background-color: #1976d2; /* Azul profesional */
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
-nav ul li {
-  margin: 0 15px;
-}
-nav ul li button {
-  background: none;
+
+nav button {
+  background-color: #4caf50; /* Verde claro */
   border: none;
-  color: #fff;
-  font-size: 16px;
-  padding: 15px 10px;
+  padding: 12px 20px;
+  color: white;
+  font-size: 1em;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-nav ul li button:hover,
-nav ul li button:focus {
-  background-color: #0056b3;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenido principal (sin centrar toda la página) */
-main {
-  padding: 40px 20px;
+nav button:hover {
+  background-color: #388e3c;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Secciones de cuadros (Directivas, Consulta y Acerca de) */
-#sectionDirectivas,
-#sectionConsulta,
-#sectionAcerca {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  max-width: 800px;
-  margin: 20px auto; /* Centrado del cuadro, sin afectar el resto de la página */
+/* Secciones */
+section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Ocultar secciones por defecto */
 .hidden {
   display: none;
 }
 
-/* Formularios dentro de los cuadros */
+h2 {
+  color: #2e7d32;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #1976d2;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Formularios */
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 10px;
 }
-form label {
+
+label {
   font-weight: bold;
-  margin-bottom: 5px;
+  color: #333;
 }
-form input[type="text"],
-form input[type="password"],
-form input[type="file"] {
+
+input, button[type="submit"] {
   padding: 10px;
-  width: 100%;
-  max-width: 400px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 1em;
 }
-form button {
-  padding: 10px 20px;
-  background-color: #28a745;
+
+input:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+button[type="submit"], #btnLogout {
+  background-color: #1976d2;
+  color: white;
   border: none;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
-form button:hover {
-  background-color: #218838;
+
+button[type="submit"]:hover, #btnLogout:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+
+/* Lista de estudiantes y matrículas */
+#listsContainer, #enrollmentList {
+  margin-top: 10px;
+}
+
+#enrollmentList li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
 }
 
 /* Pie de página */
 footer {
   text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  margin-top: 40px;
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+  padding: 15px;
+  background-color: #2e7d32;
+  color: white;
+  font-size: 0.9em;
+  width: 100%;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  nav ul li {
-      margin: 0 10px;
+/* Enfoque Mobile-First */
+@media (min-width: 768px) {
+  main {
+    max-width: 800px;
   }
-  #sectionDirectivas,
-  #sectionConsulta,
-  #sectionAcerca {
-      width: 95%;
-      margin: 15px auto;
+
+  .header-text h1 {
+    font-size: 2.2em;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  nav button {
+    padding: 15px 30px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    max-width: 1000px;
+  }
+
+  section {
+    padding: 30px;
   }
 }
