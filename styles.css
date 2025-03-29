@@ -29,18 +29,18 @@ header {
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Logo a la izquierda */
+  justify-content: flex-start;
   padding: 10px;
-  flex-wrap: wrap; /* Permite apilar en pantallas pequeñas */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en móviles */
 }
 
 .logo {
-  width: 10px;
+  width: 50px; /* Tamaño más visible en móviles */
   height: auto;
   background-color: white; /* Fondo blanco */
-  border-radius: 50%; /* Fondo redondeado */
-  padding: 5px; /* Espacio entre el logo y el borde del fondo */
-  margin-right: 15px; /* Espacio entre logo y texto */
+  border-radius: 50%; /* Redondeado */
+  padding: 5px; /* Espacio interno */
+  margin-right: 15px; /* Espacio al texto */
 }
 
 .header-text {
@@ -202,5 +202,15 @@ footer {
 
   section {
     padding: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .logo {
+    width: 50px; /* Tamaño mínimo para móviles */
+    margin: 0 auto 10px; /* Centra el logo si es necesario */
+  }
+  .header-text {
+    text-align: center;
+    width: 100%;
   }
 }
